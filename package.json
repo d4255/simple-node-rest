@@ -1,0 +1,23 @@
+{
+  "name": "simple-node-rest",
+  "version": "1.0.0",
+  "description": "Basic REST service in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d4255/simple-node-rest.git"
+  },
+  "author": "Darren Hall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d4255/simple-node-rest/issues"
+  },
+  "homepage": "https://github.com/d4255/simple-node-rest#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "jest": "^27.5.1"
+  }
+}
