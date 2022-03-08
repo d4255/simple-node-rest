@@ -9,7 +9,7 @@ const app = express();
 
 // configure runtime environment
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(songRoutes);
 
 // -------------------------

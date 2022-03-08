@@ -1,19 +1,23 @@
 // -------------------------
 // module dependencies
-const ds = require('./inMemoryDB');
+const ds = require('./datastore');
 const db = ds.getInstance();
 
 // -------------------------
 // module functions
 const SongDAO = {
-    get(id) {
-        return db.get(id);
+    get(key) {
+        return db.get(key);
     },
-    save(json) {
-        return db.set(song.id, song);
+    save(key, value) {
+        db.set(key, value);
+        return value;
     },
-    remove(id) {
-        return db.delete(id);
+    remove(key) {
+        return db.delete(key);
+    },
+    nextId() {
+        return ds.nextId();
     }
 }
 

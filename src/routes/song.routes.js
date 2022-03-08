@@ -17,17 +17,59 @@ router.get('/song/:id', (req, res) => {
 });
 
 // POST
-router.post('/song', async (req, res) => {
-    console.log('Received a POST request.');
+router.post('/song', (req, res) => {
+    let status = 200;
+    let message = 'OK';
+    let result = undefined;
+
+    if (req.body && !req.body.id) {
+        try {
+            result = service.save(null, input);
+        }
+        catch (e) {
+            status = 400;
+            message = e.message;
+        }
+    }
+    else {
+        status = 400;
+        message = 'Bad request.';
+    }
+        
+    (result ?
+        res.json(result) :
+        res.status(status).send(message));
 });
 
 // PUT
-router.put('/song/:id', async (req, res) => {
-    console.log('Received a PUT request for song id ' + req.params.id);
+router.put('/song/:id', (req, res) => {
+    let status = 200;
+    let message = 'OK';
+    let result = undefined;
+
+    if (req.body && 
+        (Number(req.body.id) === Number(req.params.id))) {
+        
+        try {
+            result = service.save(req.body.id, req.body);
+        }
+        catch (e) {
+            status = 400;
+            message = e.message;
+        }
+    }
+    else {
+        status = 400;
+        message = 'Bad request.';
+    }
+        
+    (result ?
+        res.json(result) :
+        res.status(status).send(message));
 });
 
 // DELETE
-router.delete('/song/:id', async (req, res) => {
+router.delete('/song/:id', (req, res) => {
     let result = service.removeById(req.params.id);
     (result ? 
         res.status(200).send('Song ' + req.params.id + ' removed.') :
