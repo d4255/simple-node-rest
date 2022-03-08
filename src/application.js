@@ -8,6 +8,8 @@ const songRoutes = require('./routes/song.routes');
 const app = express();
 
 // configure runtime environment
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(songRoutes);
 
 // -------------------------
