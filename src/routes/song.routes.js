@@ -24,7 +24,7 @@ router.post('/song', (req, res) => {
 
     if (req.body && !req.body.id) {
         try {
-            result = service.save(null, input);
+            result = service.save(null, req.body);
         }
         catch (e) {
             status = 400;
