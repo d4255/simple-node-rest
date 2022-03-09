@@ -9,7 +9,7 @@ const service = require('../service/song.service');
 // define API endpoints
 
 // GET
-router.get('/song/:id', (req, res) => {
+router.get('/songs/:id', (req, res) => {
     let result = service.getById(req.params.id);
     (result ? 
         res.json(result) : 
@@ -17,7 +17,7 @@ router.get('/song/:id', (req, res) => {
 });
 
 // POST
-router.post('/song', (req, res) => {
+router.post('/songs', (req, res) => {
     let status = 200;
     let message = 'OK';
     let result = undefined;
@@ -42,7 +42,7 @@ router.post('/song', (req, res) => {
 });
 
 // PUT
-router.put('/song/:id', (req, res) => {
+router.put('/songs/:id', (req, res) => {
     let status = 200;
     let message = 'OK';
     let result = undefined;
@@ -69,7 +69,7 @@ router.put('/song/:id', (req, res) => {
 });
 
 // DELETE
-router.delete('/song/:id', (req, res) => {
+router.delete('/songs/:id', (req, res) => {
     let result = service.removeById(req.params.id);
     (result ? 
         res.status(200).send('Song ' + req.params.id + ' removed.') :
