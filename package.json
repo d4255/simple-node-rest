@@ -4,9 +4,10 @@
   "description": "Basic REST service in Node.js",
   "main": "src/index.js",
   "scripts": {
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon ./src/index.js",
     "test": "jest --config=jest.config.js --coverage --detectOpenHandles --no-cache",
-    "test:integration": "NODE-ENV=integration-test jest --config=jest.config.integration.js",
-    "start:dev": "nodemon ./src/index.js"
+    "test:integration": "NODE-ENV=integration-test jest --config=jest.config.integration.js"
   },
   "repository": {
     "type": "git",

@@ -15,13 +15,9 @@ const Datastore = {
             throw new Error('Datastore not initialized');
         }
 
-        let next = 0;
-        let keys = Array.from(instance.keys());
-        if (keys && keys.length >0) {
-            next = Number(Math.max.apply(null, keys));
-        }
+        let max = Number(Math.max.apply(null, Array.from(instance.keys())));
 
-        return next +1;
+        return max +1;
     }
 }
 

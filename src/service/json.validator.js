@@ -1,31 +1,29 @@
-
+// -------------------------
+// module exports
 const JSONValidator = {
     validateSongJSON(jsonIn) {
-        let result = undefined;
+        let jsonOut = undefined;
 
         if (jsonIn) {
-            let cleanJSON = JSON.parse(JSON.stringify(jsonIn));
-            if (!cleanJSON.id) {
+            const { id, title, artist, url } = jsonIn;
+            
+            if (!id) {
                 throw new Error('ID is required.');
             }
-            if (!cleanJSON.title) {
+            if (!title) {
                 throw new Error('Title is required.');
             }
-            if (!cleanJSON.artist) {
+            if (!artist) {
                 throw new Error('Artist is required.');
             }
 
-            let songJSON = {
-                "id": cleanJSON.id,
-                "title": cleanJSON.title,
-                "artist": cleanJSON.artist,
-                "url": cleanJSON.url
-            }
-            jsonOut = JSON.parse(JSON.stringify(songJSON));
+            jsonOut = { id, title, artist, url };
         }
 
         return jsonOut;
     }
 }
 
+// -------------------------
+// module exports
 module.exports = JSONValidator;

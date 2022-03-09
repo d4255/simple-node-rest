@@ -31,7 +31,7 @@ From a terminal window at the application root, execute the command below to run
 
 ## Running the code
 From a terminal window at the application root, execute the command below.
->   node src/index.js
+>   npm start
 
 To run the application in developer mode, execute the command below from a terminal window at the application root.
 >   npm run start:dev
