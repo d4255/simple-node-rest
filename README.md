@@ -27,7 +27,7 @@ From a terminal window at the application root, execute the command below to run
 >   npm test
 
 From a terminal window at the application root, execute the command below to run the integration test suite.
->   npm test:integration
+>   npm run test:integration
 
 ## Running the code
 From a terminal window at the application root, execute the command below.
