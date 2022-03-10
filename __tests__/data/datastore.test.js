@@ -1,5 +1,5 @@
-const datastore = require('../../../src/data/datastore');
-const datastore2 = require("../../../src/data/datastore");
+const datastore = require('../../src/data/datastore');
+const datastore2 = require("../../src/data/datastore");
 
 // Unit tests for the datastore
 describe ('Unit test suite for: datastore', () => {

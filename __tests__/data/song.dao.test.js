@@ -1,7 +1,7 @@
-const dao = require('../../../src/data/song.dao');
-const db = require('../../../src/data/datastore');
+const dao = require('../../src/data/song.dao');
+const db = require('../../src/data/datastore');
 
-jest.mock('../../../src/data/datastore', 
+jest.mock('../../src/data/datastore', 
     () => ({
         get: jest.fn(),
         set: jest.fn(),
