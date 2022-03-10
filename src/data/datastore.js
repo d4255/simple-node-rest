@@ -1,3 +1,5 @@
+// -------------------------
+// module variables
 let instance = undefined;
 
 // -------------------------
@@ -8,20 +10,9 @@ const Datastore = {
             instance = new Map();
         }
         return instance;
-    },
-
-    nextId() {
-        if (!instance) {
-            throw new Error('Datastore not initialized');
-        }
-
-        const keys = Array.from(instance.keys());
-        return (keys.length > 0 ?
-                    Number(Math.max.apply(null, keys)) :
-                    0) + 1;
     }
 }
 
 // -------------------------
 // module exports
-module.exports = Datastore;
+module.exports = Datastore.getInstance();

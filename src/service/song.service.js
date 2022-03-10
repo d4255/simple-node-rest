@@ -7,7 +7,10 @@ const validator = require('./json.validator');
 // module functions
 const SongService = {
     getById(id) {
-        return dao.get(id);
+        return dao.get(String(id));
+    },
+    getAll() {
+        return dao.getAll();
     },
     save(id, song) {
         let result = undefined;
@@ -21,7 +24,7 @@ const SongService = {
 
         try {
             let validSong = validator.validateSongJSON(song);
-            result = dao.save(validSong.id, validSong);
+            result = dao.save(String(validSong.id), validSong);
         }
         catch (e) {
             throw new Error(e);
@@ -30,7 +33,7 @@ const SongService = {
         return result;
     },
     removeById(id) {
-        return dao.remove(id);
+        return dao.remove(String(id));
     }
 }
 

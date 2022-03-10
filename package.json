@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/d4255/simple-node-rest#readme",
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
     "nodemon": "2.0.15"
   },

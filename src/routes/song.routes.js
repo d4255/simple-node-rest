@@ -8,12 +8,17 @@ const service = require('../service/song.service');
 
 // define API endpoints
 
-// GET
+// GET: return song for the provided ID or 'Song not found.'
 router.get('/songs/:id', (req, res) => {
     let result = service.getById(req.params.id);
     (result ? 
         res.json(result) : 
         res.status(404).send('Song not found.'));
+});
+
+// GET: return all songs, or an empty array
+router.get('/songs', (req, res) => {
+    res.json(service.getAll());
 });
 
 // POST

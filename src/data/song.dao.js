@@ -1,13 +1,15 @@
 // -------------------------
 // module dependencies
-const ds = require('./datastore');
-const db = ds.getInstance();
+const db = require('./datastore');
 
 // -------------------------
 // module functions
 const SongDAO = {
     get(key) {
         return db.get(key);
+    },
+    getAll() {
+        return Array.from(db.values());
     },
     save(key, value) {
         db.set(key, value);
@@ -17,7 +19,10 @@ const SongDAO = {
         return db.delete(key);
     },
     nextId() {
-        return ds.nextId();
+        const keys = Array.from(db.keys());
+        return (keys.length > 0 ?
+                    Number(Math.max.apply(null, keys)) :
+                    0) + 1;
     }
 }
 
