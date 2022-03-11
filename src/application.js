@@ -1,6 +1,7 @@
 // -------------------------
 // module dependencies
 const express = require('express');
+const loadSongRoutes = require('./routes/song.routes');
 const songRoutes = require('./routes/song.routes');
 
 // -------------------------
@@ -10,7 +11,7 @@ const app = express();
 // configure runtime environment
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(songRoutes);
+loadSongRoutes(app);
 
 // -------------------------
 // module exports

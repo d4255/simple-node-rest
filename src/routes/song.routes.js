@@ -1,86 +1,25 @@
 // -------------------------
 // module dependencies
-const router = require('express').Router();
-const service = require('../service/song.service');
+const SongController = require('../controller/song.controller'); 
 
 // -------------------------
 // module functions
 
 // define API endpoints
 
-// GET: return song for the provided ID or 'Song not found.'
-router.get('/songs/:id', (req, res) => {
-    let result = service.getById(req.params.id);
-    (result ? 
-        res.json(result) : 
-        res.status(404).send('Song not found.'));
-});
-
-// GET: return all songs, or an empty array
-router.get('/songs', (req, res) => {
-    res.json(service.getAll());
-});
-
-// POST
-router.post('/songs', (req, res) => {
-    let status = 200;
-    let message = 'OK';
-    let result = undefined;
-
-    if (req.body && !req.body.id) {
-        try {
-            result = service.save(null, req.body);
-        }
-        catch (e) {
-            status = 400;
-            message = e.message;
-        }
-    }
-    else {
-        status = 400;
-        message = 'Bad request.';
-    }
-        
-    (result ?
-        res.json(result) :
-        res.status(status).send(message));
-});
-
-// PUT
-router.put('/songs/:id', (req, res) => {
-    let status = 200;
-    let message = 'OK';
-    let result = undefined;
-
-    if (req.body && 
-        (Number(req.body.id) === Number(req.params.id))) {
-        
-        try {
-            result = service.save(req.body.id, req.body);
-        }
-        catch (e) {
-            status = 400;
-            message = e.message;
-        }
-    }
-    else {
-        status = 400;
-        message = 'Bad request.';
-    }
-        
-    (result ?
-        res.json(result) :
-        res.status(status).send(message));
-});
-
-// DELETE
-router.delete('/songs/:id', (req, res) => {
-    let result = service.removeById(req.params.id);
-    (result ? 
-        res.status(200).send('Song ' + req.params.id + ' removed.') :
-        res.status(404).send('Song not found.'));
-});
+const loadSongRoutes = (app, controller = SongController) => {
+    // GET: find all songs
+    app.get('/songs', controller.findAllSongs);
+    // GET: find song by ID
+    app.get('/songs/:id', controller.findById);
+    // POST
+    app.post('/songs', controller.insert);
+    // PUT
+    app.put('/songs/:id', controller.update);
+    // DELETE
+    app.delete('/songs/:id', controller.remove);
+}
 
 // -------------------------
 // module exports
-module.exports = router;
+module.exports = loadSongRoutes;

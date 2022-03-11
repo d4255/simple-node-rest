@@ -2,6 +2,10 @@
 // module dependencies
 const application = require('./application');
 
+// -------------------------
+// module functions
+const PORT = 8000;
+
 // execution starts here
 if (require.main === module) {
     main();
@@ -14,7 +18,7 @@ if (require.main === module) {
 function main() {
     console.log('The application is starting up...');
 
-    application.listen(8000, () => {
-        console.log('     Application listening on port 8000.');
+    application.listen(PORT, () => {
+        console.log(`     Application listening on port ${PORT}.`);
     });
 }
