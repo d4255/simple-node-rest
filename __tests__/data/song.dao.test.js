@@ -1,7 +1,7 @@
-const dao = require('../../src/data/song.dao');
-const db = require('../../src/data/datastore');
+const dao = require("../../src/data/song.dao");
+const db = require("../../src/data/datastore");
 
-jest.mock('../../src/data/datastore', 
+jest.mock("../../src/data/datastore", 
     () => ({
         get: jest.fn(),
         set: jest.fn(),
@@ -12,7 +12,7 @@ jest.mock('../../src/data/datastore',
 );
 
 // Unit tests for the song DAO
-describe ('Unit test suite for: song.dao', () => {
+describe ('Unit test suite for song.dao', () => {
 
     // Test definitions
     test ('Test get(key) - success', () => {
