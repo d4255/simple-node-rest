@@ -118,9 +118,7 @@ describe("Unit tests for song.service", () => {
         // arrange and act
         const id = 1;
         const json = {
-            "id": 1,
-            "artist": "Bobby Darin",
-            "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
+            "id": 1
         };
 
         // assert

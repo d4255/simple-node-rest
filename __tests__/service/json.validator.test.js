@@ -17,7 +17,7 @@ describe("Unit tests for json.validator", () => {
             "title": "La Mer (Beyond the Sea)",
             "artist": "Bobby Darin",
             "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
-        }
+        };
 
         // assert
         expect(validator.validateSongJSON(input)).toEqual(result);
@@ -38,7 +38,16 @@ describe("Unit tests for json.validator", () => {
             "title": "La Mer (Beyond the Sea)",
             "artist": "Bobby Darin",
             "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
-        }
+        };
+
+        // assert
+        expect(validator.validateSongJSON(input)).toEqual(result);
+    });
+
+    test("validate undefined input - returns undefined", () => {
+        // arrange and act
+        const input = undefined;
+        const result = undefined;
 
         // assert
         expect(validator.validateSongJSON(input)).toEqual(result);
