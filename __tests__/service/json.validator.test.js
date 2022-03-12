@@ -44,7 +44,7 @@ describe("Unit tests for json.validator", () => {
         expect(validator.validateSongJSON(input)).toEqual(result);
     });
 
-    test("validate song with no ID - throws error", () => {
+    test("validate song with no ID - throws `ID is required.` error", () => {
         // arrange and act
         const input = {
             "title": "La Mer (Beyond the Sea)",
@@ -54,11 +54,11 @@ describe("Unit tests for json.validator", () => {
 
         // assert
         expect(() => {
-            validator.validateSongJSON(input);
+            validator.validateSongJSON(input)
           }).toThrow('ID is required.');
     });
 
-    test("validate song with no title - throws error", () => {
+    test("validate song with no title - throws `Title is required.` error", () => {
         // arrange and act
         const input = {
             "id": 1,
@@ -68,11 +68,11 @@ describe("Unit tests for json.validator", () => {
 
         // assert
         expect(() => {
-            validator.validateSongJSON(input);
+            validator.validateSongJSON(input)
           }).toThrow('Title is required.');
     });
 
-    test("validate song with no artist - throws error", () => {
+    test("validate song with no artist - throws `Artist is required.` error", () => {
         // arrange and act
         const input = {
             "id": 1,
@@ -82,7 +82,7 @@ describe("Unit tests for json.validator", () => {
 
         // assert
         expect(() => {
-            validator.validateSongJSON(input);
+            validator.validateSongJSON(input)
           }).toThrow('Artist is required.');
     });
 

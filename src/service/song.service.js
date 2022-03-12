@@ -24,13 +24,14 @@ const save = (id, song) => {
     }
 
     try {
-        let validSong = validator.validateSongJSON(song);
-        result = dao.save(String(validSong.id), validSong);
+        song = validator.validateSongJSON(song);
     }
     catch (e) {
         console.log(e);
         throw new Error(e);
     }
+
+    result = dao.save(String(song.id), song);
 
     return result;
 }
