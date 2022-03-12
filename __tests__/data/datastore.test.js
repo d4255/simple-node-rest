@@ -1,7 +1,7 @@
 const datastore = require("../../src/data/datastore");
 const datastore2 = require("../../src/data/datastore");
 
-// Unit tests for the datastore
+// Unit test suite for the datastore
 describe ('Unit test suite for datastore', () => {
 
     // Test definitions

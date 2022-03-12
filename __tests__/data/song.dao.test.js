@@ -11,7 +11,7 @@ jest.mock("../../src/data/datastore",
     })
 );
 
-// Unit tests for the song DAO
+// Unit test suite for the song DAO
 describe ('Unit test suite for song.dao', () => {
 
     // Test definitions

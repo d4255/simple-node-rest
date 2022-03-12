@@ -1,4 +1,3 @@
-const express = require("express");
 const loadSongRoutes = require("../../src/routes/song.routes");
 
 jest.mock("../../src/controller/song.controller",
@@ -11,7 +10,7 @@ jest.mock("../../src/controller/song.controller",
     })
 );
 
-// Unit tests for the song routes
+// Unit test suite for the song routes
 describe("Unit tests for song.routes", () => {
     // declatations
     const app = {
