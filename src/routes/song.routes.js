@@ -9,7 +9,7 @@ const SongController = require('../controller/song.controller');
 
 const loadSongRoutes = (app, controller = SongController) => {
     // GET: find all songs
-    app.get('/songs', controller.findAllSongs);
+    app.get('/songs', controller.findAll);
     // GET: find song by ID
     app.get('/songs/:id', controller.findById);
     // POST

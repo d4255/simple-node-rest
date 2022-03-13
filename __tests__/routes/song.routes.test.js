@@ -2,7 +2,7 @@ const loadSongRoutes = require("../../src/routes/song.routes");
 
 jest.mock("../../src/controller/song.controller",
     () => ({
-        findAllSongs: jest.fn(),
+        findAll: jest.fn(),
         findById: jest.fn(),
         insert: jest.fn(),
         update: jest.fn(),
@@ -24,11 +24,11 @@ describe("Unit tests for song.routes", () => {
     test("GET /songs route is received by the correct handler - success", () => {
         // arrange and act
         jest.spyOn(app, 'get');
-        const controller = { findAllSongs: () => {} };
+        const controller = { findAll: () => {} };
         loadSongRoutes(app, controller);
 
         // assert
-        expect(app.get).toHaveBeenCalledWith('/songs', controller.findAllSongs);
+        expect(app.get).toHaveBeenCalledWith('/songs', controller.findAll);
     });
 
     test("GET /songs/:id route is received by the correct handler - success", () => {

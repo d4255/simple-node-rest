@@ -4,7 +4,7 @@ const service = require('../service/song.service');
 
 // -------------------------
 // module functions
-const findAllSongs = async (req, res) => {
+const findAll = async (req, res) => {
     const songs = await service.findAll();
     res.json(songs);
 }
@@ -79,7 +79,7 @@ const remove = async (req, res) => {
 
 // -------------------------
 // module exports
-module.exports.findAllSongs = findAllSongs;
+module.exports.findAll = findAll;
 module.exports.findById = findById;
 module.exports.insert = insert;
 module.exports.update = update;
