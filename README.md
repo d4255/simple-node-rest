@@ -8,8 +8,9 @@ The project root directory contains project configuration files used by Git and 
 - **index.js** comtains the main() method, which is the execution start point for this application.
 - **application.js** contains application runtime configuration.
 - **/src** contains the JavaScript source code files, sub-grouped by architectural domain.
+- ....**/src/controller** an orchestrator that contains the workflows service operations.
 - ....**/src/data** contains objects and functions related to the persistence layer.
-- ....**/src/routes** contains RESTful API operations and workflows related to the API view layer.
+- ....**/src/routes** defines the RESTful API endpoints, mapping URL paths to controller operations.
 - ....**/src/service** contains objects and functions related to executing the business operations.
 - **__test__** contains the application unit test suite and integration test suites.
 
