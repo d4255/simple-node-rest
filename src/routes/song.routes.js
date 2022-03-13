@@ -1,23 +1,23 @@
 // -------------------------
 // module dependencies
-const SongController = require('../controller/song.controller'); 
+const {findAll, findById, insert, update, remove} = require('../controller/song.controller'); 
 
 // -------------------------
 // module functions
 
 // define API endpoints
 
-const loadSongRoutes = (app, controller = SongController) => {
+const loadSongRoutes = (app ) => {
     // GET: find all songs
-    app.get('/songs', controller.findAll);
+    app.get('/songs', findAll);
     // GET: find song by ID
-    app.get('/songs/:id', controller.findById);
+    app.get('/songs/:id', findById);
     // POST
-    app.post('/songs', controller.insert);
+    app.post('/songs', insert);
     // PUT
-    app.put('/songs/:id', controller.update);
+    app.put('/songs/:id', update);
     // DELETE
-    app.delete('/songs/:id', controller.remove);
+    app.delete('/songs/:id', remove);
 }
 
 // -------------------------

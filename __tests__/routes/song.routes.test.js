@@ -1,74 +1,60 @@
 const loadSongRoutes = require("../../src/routes/song.routes");
+const { findAll, findById, insert, update, remove } = require('../../src/controller/song.controller');
 
-jest.mock("../../src/controller/song.controller",
-    () => ({
-        findAll: jest.fn(),
-        findById: jest.fn(),
-        insert: jest.fn(),
-        update: jest.fn(),
-        remove: jest.fn()
-    })
-);
 
 // Unit test suite for the song routes
 describe("Unit tests for song.routes", () => {
-    // declatations
-    const app = {
-        get: () => {},
-        post: () => {},
-        put: () => {},
-        delete: () => {}
-    }
+    let app;
+
+    beforeEach(() => {
+        jest.resetAllMocks();
+        // declatations
+        app = {
+            get: jest.fn(),
+            post: jest.fn(),
+            put: jest.fn(),
+            delete: jest.fn()
+        }
+    });
 
     // Test definitions
     test("GET /songs route is received by the correct handler - success", () => {
         // arrange and act
-        jest.spyOn(app, 'get');
-        const controller = { findAll: () => {} };
-        loadSongRoutes(app, controller);
+        loadSongRoutes(app);
 
         // assert
-        expect(app.get).toHaveBeenCalledWith('/songs', controller.findAll);
+        expect(app.get.mock.calls[0]).toEqual(['/songs', findAll]);
     });
 
     test("GET /songs/:id route is received by the correct handler - success", () => {
         // arrange and act
-        jest.spyOn(app, 'get');
-        const controller = { findById: () => {} };
-        loadSongRoutes(app, controller);
+        loadSongRoutes(app);
 
         // assert
-        expect(app.get).toHaveBeenCalledWith('/songs/:id', controller.findById);
+        expect(app.get.mock.calls[1]).toEqual(['/songs/:id', findById]);
     });
 
     test("POST /songs route is received by the correct handler - success", () => {
         // arrange and act
-        jest.spyOn(app, 'post');
-        const controller = { insert: () => {} };
-        loadSongRoutes(app, controller);
+        loadSongRoutes(app);
 
         // assert
-        expect(app.post).toHaveBeenCalledWith('/songs', controller.insert);
+        expect(app.post).toHaveBeenCalledWith('/songs', insert);
     });
 
     test("PUT /songs/:id route is received by the correct handler - success", () => {
         // arrange and act
-        jest.spyOn(app, 'put');
-        const controller = { update: () => {} };
-        loadSongRoutes(app, controller);
+        loadSongRoutes(app);
 
         // assert
-        expect(app.put).toHaveBeenCalledWith('/songs/:id', controller.update);
+        expect(app.put).toHaveBeenCalledWith('/songs/:id', update);
     });
 
     test("DELETE /songs/:id route is received by the correct handler - success", () => {
         // arrange and act
-        jest.spyOn(app, 'delete');
-        const controller = { remove: () => {} };
-        loadSongRoutes(app, controller);
+        loadSongRoutes(app);
 
         // assert
-        expect(app.delete).toHaveBeenCalledWith('/songs/:id', controller.remove);
+        expect(app.delete).toHaveBeenCalledWith('/songs/:id', remove);
     });
-
 })

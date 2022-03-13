@@ -42,7 +42,4 @@ const removeById = (id) => {
 
 // -------------------------
 // module exports
-module.exports.findById = findById;
-module.exports.findAll = findAll;
-module.exports.save = save;
-module.exports.removeById = removeById;
+module.exports = { findById, findAll, save, removeById };
