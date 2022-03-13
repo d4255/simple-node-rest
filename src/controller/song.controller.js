@@ -46,9 +46,9 @@ const update = async (req, res) => {
     let status = 200;
     let message = 'OK.';
 
-    if (req.body && 
+    if (req.body &&
         (Number(req.body.id) === Number(req.params.id))) {
-        
+
         try {
             result = await service.save(req.body.id, req.body);
         }
@@ -79,8 +79,4 @@ const remove = async (req, res) => {
 
 // -------------------------
 // module exports
-module.exports.findAll = findAll;
-module.exports.findById = findById;
-module.exports.insert = insert;
-module.exports.update = update;
-module.exports.remove = remove;
+module.exports = { findAll, findById, update, insert, remove };

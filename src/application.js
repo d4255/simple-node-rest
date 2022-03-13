@@ -2,7 +2,6 @@
 // module dependencies
 const express = require('express');
 const loadSongRoutes = require('./routes/song.routes');
-const songRoutes = require('./routes/song.routes');
 
 // -------------------------
 // module variables

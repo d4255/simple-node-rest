@@ -24,14 +24,10 @@ const remove = (key) => {
 const nextId = () => {
     const keys = Array.from(db.keys());
     return (keys.length > 0 ?
-                Number(Math.max.apply(null, keys)) :
-                0) + 1;
+        Number(Math.max.apply(null, keys)) :
+        0) + 1;
 }
 
 // -------------------------
 // module exports
-module.exports.get = get;
-module.exports.getAll = getAll;
-module.exports.save = save;
-module.exports.remove = remove;
-module.exports.nextId = nextId;
+module.exports = { get, getAll, save, remove, nextId };
