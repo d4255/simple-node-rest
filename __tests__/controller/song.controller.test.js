@@ -65,21 +65,64 @@ describe("Unit tests for song.controller", () => {
     test("Test findById() - success", async () => {
         // arrange and act
         const req = mockRequest();
-        const res = mockResponse();
-        const id = 1;        
+        const res = mockResponse();      
         const json = {
             "id": 1,
             "title": "La Mer (Beyond the Sea)",
             "artist": "Bobby Darin",
             "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
         };
-
         req.params = { "id": 1 }
         res.text = json;
-
         service.findById.mockReturnValue(res);
 
         await controller.findById(req, res)
+
+        // assert
+        expect(res.text).toEqual(json);
+    });
+
+    test("Test insert() - success", async () => {
+        // arrange and act
+        const req = mockRequest();
+        const res = mockResponse();      
+        const input = {
+            "title": "La Mer (Beyond the Sea)",
+            "artist": "Bobby Darin",
+            "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
+        };
+        const response = {
+            "id": 1,
+            "title": "La Mer (Beyond the Sea)",
+            "artist": "Bobby Darin",
+            "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
+        }
+        req.json = input;
+        res.text = response;
+        service.save.mockReturnValue(res);
+
+        await controller.insert(req, res)
+
+        // assert
+        expect(res.text).toEqual(response);
+    });
+
+    test("Test update() - success", async () => {
+        // arrange and act
+        const req = mockRequest();
+        const res = mockResponse();      
+        const json = {
+            "id": 1,
+            "title": "La Mer (Beyond the Sea)",
+            "artist": "Bobby Darin",
+            "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
+        };
+        req.params = { "id": 1 };
+        req.json = json;
+        res.text = json;
+        service.save.mockReturnValue(res);
+
+        await controller.update(req, res)
 
         // assert
         expect(res.text).toEqual(json);
