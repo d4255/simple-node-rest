@@ -30,8 +30,4 @@ const nextId = () => {
 
 // -------------------------
 // module exports
-module.exports.get = get;
-module.exports.getAll = getAll;
-module.exports.save = save;
-module.exports.remove = remove;
-module.exports.nextId = nextId;
+module.exports = { get, getAll, save, remove, nextId };

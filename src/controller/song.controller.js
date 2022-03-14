@@ -79,8 +79,4 @@ const remove = async (req, res) => {
 
 // -------------------------
 // module exports
-module.exports.findAll = findAll;
-module.exports.findById = findById;
-module.exports.insert = insert;
-module.exports.update = update;
-module.exports.remove = remove;
+module.exports = { findAll, findById, insert, update, remove };
