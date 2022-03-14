@@ -7,7 +7,7 @@
     "start": "node ./src/index.js",
     "start:dev": "nodemon ./src/index.js",
     "test": "jest --config=jest.config.js --coverage --detectOpenHandles --no-cache",
-    "test:integration": "NODE-ENV=integration-test jest --config=jest.config.integration.js"
+    "test:integration": "jest --config=jest.config.integration.js --coverage --no-cache"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
     "node-mocks-http": "^1.11.0",
-    "nodemon": "2.0.15"
+    "nodemon": "2.0.15",
+    "supertest": "^6.2.2"
   },
   "dependencies": {
     "express": "^4.17.3"
