@@ -22,4 +22,4 @@ const loadSongRoutes = (app, controller = SongController) => {
 
 // -------------------------
 // module exports
-module.exports = loadSongRoutes;
+module.exports = ( loadSongRoutes );

@@ -24,4 +24,4 @@ const validateSongJSON = (input) => {
 
 // -------------------------
 // module exports
-module.exports.validateSongJSON = validateSongJSON;
+module.exports = { validateSongJSON };
