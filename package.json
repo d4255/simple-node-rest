@@ -7,7 +7,7 @@
     "start": "node ./src/index.js",
     "start:dev": "nodemon ./src/index.js",
     "test": "jest --config=jest.config.js --coverage --detectOpenHandles --no-cache",
-    "test:integration": "jest --config=jest.config.integration.js --coverage --no-cache"
+    "test:integration": "jest --config=jest.config.integration.js --coverage --detectOpenHandles --no-cache"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,29 @@
+{
+    "title": "La Mer (Beyond the Sea)",
+    "artist": "Bobby Darin",
+    "url": "https://www.youtube.com/watch?v=m8OlDPqYBLw"
+}
+
+{
+    "title": "La Bomba",
+    "artist": "Ritchie Valens",
+    "url": "https://www.youtube.com/watch?v=Jp6j5HJ-Cok"
+}
+
+{
+    "title": "Rave On!",
+    "artist": "Buddy Holly",
+    "url": "https://www.youtube.com/watch?v=0IUV-QxwlRM"
+}
+
+{
+    "title": "I Only Have Eyes for You",
+    "artist": "The Flamingos",
+    "url": "https://www.youtube.com/watch?v=1_urvud-Oi0"
+}
+
+{
+    "title": "Twist and Shout",
+    "artist": "The Isley Brothers",
+    "url": "https://www.youtube.com/watch?v=fuNCwPBm3fw"
+}
