@@ -2,22 +2,20 @@ const datastore = require("../../src/data/datastore");
 const datastore2 = require("../../src/data/datastore");
 
 // Unit test suite for the datastore
-describe ('Unit test suite for datastore', () => {
+describe("Unit test suite for datastore", () => {
+  // Test definitions
+  test("Test getInstance() always returns a valid instance", () => {
+    // arrange and act
 
-    // Test definitions
-    test ('Test getInstance() always returns a valid instance', () => {
-        // arrange and act
+    // assert
+    expect(datastore).not.toBeUndefined;
+    expect(datastore).not.toBeNull;
+  });
 
-        // assert
-        expect(datastore).not.toBeUndefined;
-        expect(datastore).not.toBeNull;
-    });
+  test("Test getInstance() always returns a reference to the same instance", () => {
+    // arrange and act
 
-    test ('Test getInstance() always returns a reference to the same instance', () => {
-        // arrange and act
-
-        //assert
-        expect(datastore).toBe(datastore2);
-    })
-
-})
+    //assert
+    expect(datastore).toBe(datastore2);
+  });
+});

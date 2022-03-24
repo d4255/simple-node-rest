@@ -14,9 +14,10 @@ The project root directory contains project configuration files used by Git and 
 - ....**/src/routes** defines the RESTful API endpoints, mapping URL paths to controller operations.
 - ....**/src/service** contains objects and functions related to executing the business operations.
 - \***\*test\*\*** contains the application unit test suite and integration test suites.
+- \***\*data\*\*** is a helper directory that contains data sets used for testing the application.
 
 Unit test source code files are named using the Jest file naming convention of `{object filename}.test.js`.
-Integration test source code files are names using the naming convention of `{object filename}.integration.test.js`.
+Integration test source code files are named using the naming convention of `{object filename}.integration.test.js`.
 
 ## Intalling the code
 
@@ -61,12 +62,12 @@ To run the application in developer mode, execute the command below from a termi
   PUT http://localhost:8000/songs/:1d
 
 - Delete a song by ID
-  DELETE http://localhost:8000/songs/1
+  DELETE http://localhost:8000/songs/:id
 
 ## Message Structure
 
 [{
-"id": 0,
+"id": {id},
 "title": "{title}",
 "artist": "{artist}",
 "url": "{YouTube url}"

@@ -1,26 +1,26 @@
 // -------------------------
 // module functions
 const validateSongJSON = (input) => {
-    let output = undefined;
+  let output = undefined;
 
-    if (input) {
-        const { id, title, artist, url } = input;
-        
-        if (!id) {
-            throw new Error('ID is required.');
-        }
-        if (!title) {
-            throw new Error('Title is required.');
-        }
-        if (!artist) {
-            throw new Error('Artist is required.');
-        }
+  if (input) {
+    const { id, title, artist, url } = input;
 
-        output = { id, title, artist, url };
+    if (!id) {
+      throw new Error("ID is required.");
+    }
+    if (!title) {
+      throw new Error("Title is required.");
+    }
+    if (!artist) {
+      throw new Error("Artist is required.");
     }
 
-    return output;
-}
+    output = { id, title, artist, url };
+  }
+
+  return output;
+};
 
 // -------------------------
 // module exports
